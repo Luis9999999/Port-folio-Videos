@@ -3,35 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfólio de Vídeos</title>
+<meta name="theme-color" content="#0B0B0D">
+<meta name="description" content="Portfólio de Luiz Felipe Araújo dos Santos: vídeos, fotos e artes feitos para a mídia da igreja.">
+<title>Luiz Felipe · Vídeos e artes</title>
 <style>
   :root{
-    --bg:#0E0E10; --card:#17171B; --line:#2A2A31; --text:#F2F0EA; --soft:#A9A7A0; --accent:#F25C3C;
+    --bg:#0B0B0D; --card:#151519; --line:#26262d; --text:#F4F2EC; --soft:#A3A19A; --accent:#F25C3C; --accent2:#FF9A5A;
+    --ease:cubic-bezier(.2,.7,.2,1);
   }
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.55;}
+  html{scroll-behavior:smooth;scroll-padding-top:64px;}
+  body{margin:0;background:var(--bg);color:var(--text);font:100%/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
   a{color:inherit;}
   .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
-  nav{position:sticky;top:0;background:rgba(14,14,16,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10;}
-  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;}
-  nav b{letter-spacing:.04em;}
-  nav a{text-decoration:none;color:var(--soft);margin-left:20px;font-size:14px;}
+
+  nav{position:sticky;top:0;z-index:10;background:rgba(11,11,13,.62);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);border-bottom:1px solid rgba(255,255,255,.06);}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:58px;}
+  nav b{font-weight:650;letter-spacing:-.01em;}
+  nav a{text-decoration:none;color:var(--soft);margin-left:22px;font-size:14px;transition:color .2s;}
   nav a:hover{color:var(--text);}
-  .hero{padding:90px 0 60px;}
-  .eyebrow{color:var(--accent);font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;}
-  h1{font-size:clamp(38px,7vw,72px);line-height:1.02;margin:14px 0 18px;letter-spacing:-.02em;}
-  .hero p{max-width:560px;color:var(--soft);font-size:18px;margin:0 0 28px;}
-  .btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 22px;border-radius:999px;font-weight:600;font-size:15px;}
-  .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text);margin-left:10px;}
-  section{padding:56px 0;}
-  h2{font-size:clamp(26px,4vw,36px);margin:0 0 8px;letter-spacing:-.01em;}
-  .lead{color:var(--soft);margin:0 0 28px;max-width:560px;}
-  .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;}
-  .chip{border:1px solid var(--line);background:transparent;color:var(--soft);padding:7px 14px;border-radius:999px;cursor:pointer;font-size:13.5px;}
-  .chip.on{background:var(--text);color:var(--bg);border-color:var(--text);}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px;}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+
+  .hero{position:relative;padding:110px 0 80px;overflow:hidden;}
+  .hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:640px;height:640px;background:radial-gradient(closest-side,rgba(242,92,60,.28),rgba(255,154,90,.08) 55%,transparent 75%);filter:blur(10px);pointer-events:none;}
+  .hero .wrap{position:relative;}
+  .eyebrow{color:var(--accent2);font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;}
+  h1{font-size:clamp(40px,8vw,84px);line-height:1;margin:16px 0 22px;letter-spacing:-.035em;font-weight:750;max-width:11em;}
+  .hero p{max-width:520px;color:var(--soft);font-size:19px;line-height:1.55;margin:0 0 32px;}
+  .btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:13px 24px;border-radius:999px;font-weight:600;font-size:15px;transition:transform .15s var(--ease),filter .2s;}
+  .btn:hover{filter:brightness(1.1);}
+  .btn:active{transform:scale(.97);}
+  .btn.ghost{background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--text);margin-left:10px;}
+
+  section{padding:64px 0;}
+  h2{font-size:clamp(28px,4.5vw,40px);margin:0 0 10px;letter-spacing:-.025em;line-height:1.1;}
+  .lead{color:var(--soft);margin:0 0 30px;max-width:540px;font-size:17px;}
+
+  .filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:26px;padding:5px;border:1px solid var(--line);border-radius:999px;width:fit-content;background:rgba(255,255,255,.02);}
+  .chip{border:0;background:transparent;color:var(--soft);padding:8px 18px;border-radius:999px;cursor:pointer;font:inherit;font-size:14px;transition:background .2s,color .2s;}
+  .chip:hover{color:var(--text);}
+  .chip.on{background:var(--text);color:var(--bg);font-weight:600;}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:22px;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .35s var(--ease),border-color .3s,box-shadow .35s;}
+  .card:hover{transform:translateY(-4px);border-color:#3a3a44;box-shadow:0 18px 40px -18px rgba(0,0,0,.8);}
   .frame{position:relative;aspect-ratio:16/9;background:#000;display:flex;align-items:center;justify-content:center;color:var(--soft);font-size:14px;text-align:center;padding:12px;}
   .frame iframe,.frame video{position:absolute;inset:0;width:100%;height:100%;border:0;}
   .frame.vertical{aspect-ratio:9/16;}
@@ -40,66 +54,75 @@
   .frame.img img{display:block;width:100%;height:auto;cursor:zoom-in;}
   .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:50;padding:20px;cursor:zoom-out;}
   .lightbox.on{display:flex;}
-  .lightbox img{max-width:100%;max-height:100%;border-radius:8px;}
-  .info{padding:14px 16px 18px;}
-  .info h3{margin:0 0 4px;font-size:17px;}
-  .info small{color:var(--accent);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:11.5px;}
-  .info p{margin:6px 0 0;color:var(--soft);font-size:14px;}
+  .lightbox img{max-width:100%;max-height:100%;border-radius:10px;}
+  .info{padding:16px 18px 20px;}
+  .info h3{margin:2px 0 4px;font-size:17px;letter-spacing:-.01em;}
+  .info small{color:var(--accent2);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:11.5px;}
+  .info p{margin:6px 0 0;color:var(--soft);font-size:14.5px;}
+  .info a{color:var(--accent2);text-decoration:none;font-size:14px;}
+  .info a:hover{text-decoration:underline;}
   .placeholder .info h3{color:var(--soft);}
-  .about{display:grid;grid-template-columns:1.4fr 1fr;gap:36px;align-items:start;}
-  .about-text p{margin:0 0 16px;color:var(--soft);font-size:17px;}
-  .about-text p:first-of-type{color:var(--text);}
+
+  .about{display:grid;grid-template-columns:1.4fr 1fr;gap:44px;align-items:start;}
+  .about-text p{margin:0 0 18px;color:var(--soft);font-size:18px;line-height:1.65;}
+  .about-text p:first-child{color:var(--text);font-size:20px;}
   .facts{list-style:none;margin:0;padding:0;display:grid;gap:12px;}
-  .facts li{border:1px solid var(--line);border-radius:14px;padding:16px 18px;background:var(--card);}
-  .facts b{display:block;font-size:15.5px;margin-bottom:2px;}
-  .facts span{color:var(--soft);font-size:14px;}
-  .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
-  .svc{border:1px solid var(--line);border-radius:14px;padding:22px;}
-  .svc h3{margin:0 0 6px;font-size:17px;}
-  .svc p{margin:0;color:var(--soft);font-size:14.5px;}
-  .contact{border:1px solid var(--line);border-radius:18px;padding:36px;background:linear-gradient(135deg,#1A1A1F,#141417);}
-  .links{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;}
-  footer{padding:36px 0 50px;color:var(--soft);font-size:13.5px;text-align:center;}
-  @media(max-width:760px){.about{grid-template-columns:1fr;}}
-  @media(max-width:560px){.btn.ghost{margin:10px 0 0;}}
+  .facts li{border:1px solid var(--line);border-radius:16px;padding:18px 20px;background:var(--card);}
+  .facts b{display:block;font-size:16px;margin-bottom:2px;}
+  .facts span{color:var(--soft);font-size:14.5px;}
+
+  .contact{border:1px solid var(--line);border-radius:24px;padding:clamp(28px,5vw,48px);background:radial-gradient(120% 140% at 0% 0%,rgba(242,92,60,.14),transparent 60%),var(--card);}
+  .links{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;}
+  .links .btn.ghost{margin-left:0;}
+  footer{padding:36px 0 54px;color:var(--soft);font-size:13.5px;text-align:center;}
+
+  .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+  .js .reveal.in{opacity:1;transform:none;}
+  @keyframes rise{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  .hero .eyebrow,.hero h1,.hero p,.hero .cta{animation:rise .8s var(--ease) both;}
+  .hero h1{animation-delay:.08s;} .hero p{animation-delay:.16s;} .hero .cta{animation-delay:.24s;}
+
+  @media(max-width:760px){.about{grid-template-columns:1fr;gap:28px;}.hero{padding:80px 0 56px;}}
+  @media(max-width:560px){nav a{margin-left:14px;}.btn.ghost{margin:10px 0 0;}.links .btn.ghost{margin:0;}}
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .hero .eyebrow,.hero h1,.hero p,.hero .cta{animation:none;}
+    .js .reveal{opacity:1;transform:none;transition:none;}
+    .card,.btn{transition:none;}
+    .card:hover{transform:none;}
+  }
 </style>
+<script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
 
-<nav><div class="wrap"><b id="navName"></b><div><a href="#trabalhos">Trabalhos</a><a href="#sobre">Sobre</a><a href="#servicos">Serviços</a><a href="#contato">Contato</a></div></div></nav>
+<nav><div class="wrap"><b id="navName"></b><div><a href="#trabalhos">Trabalhos</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></div></div></nav>
 
 <header class="hero"><div class="wrap">
-  <span class="eyebrow">Edição de vídeo · Gravação · Artes</span>
+  <span class="eyebrow">Vídeos · Fotos · Artes</span>
   <h1 id="heroName"></h1>
   <p id="heroText"></p>
-  <a class="btn" href="#trabalhos">Ver trabalhos</a><a class="btn ghost" href="#contato">Falar comigo</a>
+  <div class="cta"><a class="btn" href="#trabalhos">Ver trabalhos</a><a class="btn ghost" href="#contato">Falar comigo</a></div>
 </div></header>
 
-<section id="trabalhos"><div class="wrap">
+<section id="trabalhos" class="reveal"><div class="wrap">
   <h2>Trabalhos</h2>
-  <p class="lead">Uma seleção dos meus vídeos mais recentes.</p>
+  <p class="lead">Vídeos e artes direto do meu Instagram.</p>
   <div class="filters" id="filters"></div>
   <div class="grid" id="grid"></div>
 </div></section>
 
-<section id="sobre"><div class="wrap">
+<section id="sobre" class="reveal"><div class="wrap">
   <h2>Sobre mim</h2>
-  <p class="lead">Quem está por trás das câmeras e da edição.</p>
-  <div class="about">
+  <div class="about" style="margin-top:28px">
     <div class="about-text" id="aboutText"></div>
     <ul class="facts" id="aboutFacts"></ul>
   </div>
 </div></section>
 
-<section id="servicos"><div class="wrap">
-  <h2>O que eu faço</h2>
-  <p class="lead">Do roteiro à entrega final.</p>
-  <div class="services" id="services"></div>
-</div></section>
-
-<section id="contato"><div class="wrap"><div class="contact">
-  <h2>Vamos trabalhar juntos?</h2>
-  <p class="lead" style="margin-bottom:0">Me chame para contar o que você precisa. Respondo o mais rápido possível.</p>
+<section id="contato" class="reveal"><div class="wrap"><div class="contact">
+  <h2>Quer fazer um trabalho comigo?</h2>
+  <p class="lead" style="margin-bottom:0">Me chama no WhatsApp ou no Instagram e conta o que você precisa.</p>
   <div class="links" id="links"></div>
 </div></div></section>
 
@@ -108,48 +131,39 @@
 <script>
   /* ============ EDITE AQUI ============ */
   const NAME = "Luiz Felipe Araújo dos Santos";
-  const TAGLINE = "Edito vídeos que prendem a atenção, de cultos e eventos a reels e conteúdo para redes.";
+  const SHORT_NAME = "Luiz Felipe";
+  const TAGLINE = "Gravo, edito e faço as artes da mídia da minha igreja. Aqui estão alguns dos meus trabalhos.";
 
-  // Cada vídeo: título, categoria, tipo e link.
-  //  type: "instagram" (código do reel: instagram.com/reel/CODIGO/), "youtube" (ID do vídeo),
-  //        "drive" (ID do arquivo no Google Drive) ou "file" (caminho do mp4 no repositório)
-  //  vertical: true para vídeos em pé (reels)
-  //  Artes: type:"image" e id = caminho da imagem no repositório (ex.: "artes/cartaz-culto.jpg")
-  //    { title:"Cartaz do culto", category:"Artes", type:"image", id:"artes/cartaz-culto.jpg", desc:"Arte de divulgação." },
+  // Cada item: título, categoria, tipo e código/caminho.
+  //  type: "instagram" (código do post: instagram.com/p/CODIGO/), "youtube" (ID do vídeo),
+  //        "drive" (ID do arquivo no Google Drive), "file" (caminho do mp4 no repositório)
+  //        ou "image" (caminho da imagem no repositório, ex.: "artes/cartaz.jpg")
   const VIDEOS = [
-    // Vídeos (reels do Instagram)
-    { title:"Vídeo 1", category:"Vídeos", type:"instagram", id:"DeHDUEqBt8s", ratio:"9/16" },
-    { title:"Vídeo 2", category:"Vídeos", type:"instagram", id:"DbEPlA3Jxnh", ratio:"9/16" },
-    { title:"Vídeo 3", category:"Vídeos", type:"instagram", id:"DeFqYOCp_7f", ratio:"9/16" },
-    { title:"Vídeo 4", category:"Vídeos", type:"instagram", id:"DaZCz4MJTbI", ratio:"9/16" },
-    // Artes (posts do Instagram)
-    { title:"Arte 1", category:"Artes", type:"instagram", id:"DasUzZCpUjl", ratio:"3/5" },
-    { title:"Arte 2", category:"Artes", type:"instagram", id:"Dau490iJcSK", ratio:"3/5" },
-    { title:"Arte 3", category:"Artes", type:"instagram", id:"Daxcp4kpG8v", ratio:"3/5" },
-    { title:"Arte 4", category:"Artes", type:"instagram", id:"Daz8Lsspolr", ratio:"3/5" },
-    // Modelo: { title:"Título", category:"Vídeos", type:"instagram", id:"CODIGO", desc:"O que você fez.", ratio:"9/16" },
+    // Vídeos
+    { title:"Vídeo 1", category:"Vídeos", type:"instagram", id:"DeHDUEqBt8s" },
+    { title:"Vídeo 2", category:"Vídeos", type:"instagram", id:"DbEPlA3Jxnh" },
+    { title:"Vídeo 3", category:"Vídeos", type:"instagram", id:"DeFqYOCp_7f" },
+    { title:"Vídeo 4", category:"Vídeos", type:"instagram", id:"DaZCz4MJTbI" },
+    // Artes
+    { title:"Arte 1", category:"Artes", type:"instagram", id:"DasUzZCpUjl" },
+    { title:"Arte 2", category:"Artes", type:"instagram", id:"Dau490iJcSK" },
+    { title:"Arte 3", category:"Artes", type:"instagram", id:"Daxcp4kpG8v" },
+    { title:"Arte 4", category:"Artes", type:"instagram", id:"Daz8Lsspolr" },
+    // Modelo: { title:"Título", category:"Vídeos", type:"instagram", id:"CODIGO", desc:"O que você fez." },
   ];
 
   // Sobre mim: cada item de "text" vira um parágrafo.
   const ABOUT = {
     text: [
-      "Faço parte da equipe de mídia da minha igreja, onde cuido de artes, fotos, gravação e edição de vídeos.",
-      "É nesse dia a dia que aprendo a entregar no prazo, trabalhar em equipe e deixar o conteúdo claro e agradável de assistir, seja um culto, um evento ou um vídeo curto para redes sociais.",
-      "Agora reúno esse trabalho aqui para mostrar o que sei fazer e estar aberto a novos projetos."
+      "Cuido da mídia da minha igreja: tiro as fotos, gravo os vídeos, edito e faço as artes de divulgação.",
+      "É esse trabalho que você vê aqui. Se precisa de alguém para gravar, editar ou criar uma arte, é só me chamar."
     ],
     facts: [
-      {t:"Mídia da igreja", d:"Artes, fotos, gravação e edição de vídeos."},
-      {t:"Edição de vídeo", d:"Do material bruto ao vídeo pronto para publicar."},
-      {t:"Design gráfico", d:"Artes de divulgação, capas e thumbnails."}
+      {t:"Vídeos", d:"Gravação e edição"},
+      {t:"Fotos", d:"Eventos e cultos"},
+      {t:"Artes", d:"Divulgação e design gráfico"}
     ]
   };
-
-  const SERVICES = [
-    {t:"Edição de vídeo", d:"Cortes, ritmo, cor e áudio para o vídeo ficar pronto para publicar."},
-    {t:"Reels e vídeos curtos", d:"Formato vertical pensado para Instagram, TikTok e Shorts."},
-    {t:"Gravação e fotos", d:"Cobertura de eventos e cultos, com captação de vídeo e fotos."},
-    {t:"Artes e capas", d:"Thumbnails, capas e artes de divulgação no mesmo estilo do vídeo."}
-  ];
 
   const CONTACTS = [
     {label:"WhatsApp", url:"https://wa.me/5581986280322"},
@@ -159,16 +173,14 @@
   /* ================================== */
 
   const $ = id => document.getElementById(id);
-  document.title = "Portfólio de Vídeos · " + NAME;
-  $("navName").textContent = NAME; $("heroName").textContent = NAME; $("footName").textContent = NAME;
+  $("navName").textContent = SHORT_NAME; $("heroName").textContent = NAME; $("footName").textContent = NAME;
   $("heroText").textContent = TAGLINE; $("year").textContent = new Date().getFullYear();
 
   $("aboutText").innerHTML = ABOUT.text.map(p=>`<p>${p}</p>`).join("");
   $("aboutFacts").innerHTML = ABOUT.facts.map(f=>`<li><b>${f.t}</b><span>${f.d}</span></li>`).join("");
-  $("services").innerHTML = SERVICES.map(s=>`<div class="svc"><h3>${s.t}</h3><p>${s.d}</p></div>`).join("");
   $("links").innerHTML = CONTACTS.length
     ? CONTACTS.map((c,i)=>`<a class="btn ${i?'ghost':''}" href="${c.url}" target="_blank" rel="noopener">${c.label}</a>`).join("")
-    : `<span style="color:var(--soft)">Adicione seus contatos em CONTACTS, no começo do script.</span>`;
+    : "";
 
   function embed(v){
     if(v.type==="image") return `<img src="${v.id}" alt="${v.title}" loading="lazy" data-zoom="${v.id}">`;
@@ -180,10 +192,10 @@
   function render(cat){
     const list = VIDEOS.filter(v=>cat==="Todos"||v.category===cat);
     if(!VIDEOS.length){
-      $("grid").innerHTML = [1,2,3].map(()=>`<div class="card placeholder"><div class="frame">Seu vídeo aparece aqui</div><div class="info"><small>Categoria</small><h3>Adicione um vídeo em VIDEOS</h3><p>Abra o arquivo e siga o exemplo comentado no começo do script.</p></div></div>`).join("");
+      $("grid").innerHTML = [1,2,3].map(()=>`<div class="card placeholder"><div class="frame">Seu vídeo aparece aqui</div><div class="info"><small>Categoria</small><h3>Adicione um item em VIDEOS</h3><p>Siga o exemplo comentado no começo do script.</p></div></div>`).join("");
       return;
     }
-    $("grid").innerHTML = list.map(v=>`<div class="card"><div class="frame ${v.type==='image'?'img':(v.type==='instagram'?'ig':(v.vertical?'vertical':''))}">${embed(v)}</div><div class="info"><small>${v.category||""}</small><h3>${v.title}</h3>${v.desc?`<p>${v.desc}</p>`:""}${v.type==="instagram"?`<p><a href="https://www.instagram.com/p/${v.id}/" target="_blank" rel="noopener" style="color:var(--accent)">Abrir no Instagram ↗</a></p>`:""}</div></div>`).join("");
+    $("grid").innerHTML = list.map(v=>`<div class="card"><div class="frame ${v.type==='image'?'img':(v.type==='instagram'?'ig':(v.vertical?'vertical':''))}">${embed(v)}</div><div class="info"><small>${v.category||""}</small><h3>${v.title}</h3>${v.desc?`<p>${v.desc}</p>`:""}${v.type==="instagram"?`<p><a href="https://www.instagram.com/p/${v.id}/" target="_blank" rel="noopener">Ver no Instagram</a></p>`:""}</div></div>`).join("");
     processIG();
   }
   function processIG(){
@@ -201,6 +213,13 @@
     document.querySelectorAll(".chip").forEach(x=>x.classList.remove("on")); b.classList.add("on"); render(b.dataset.c);
   });
   render("Todos");
+
+  // Aparecer suavemente ao rolar a página
+  const reveals = document.querySelectorAll(".reveal");
+  if("IntersectionObserver" in window){
+    const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }),{threshold:.08});
+    reveals.forEach(el=>io.observe(el));
+  } else reveals.forEach(el=>el.classList.add("in"));
 
   const lb = document.createElement("div"); lb.className = "lightbox"; lb.innerHTML = "<img alt=''>";
   document.body.appendChild(lb);
