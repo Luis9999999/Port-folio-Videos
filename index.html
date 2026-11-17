@@ -184,7 +184,7 @@
 
   function embed(v){
     if(v.type==="image") return `<img src="${v.id}" alt="${v.title}" loading="lazy" data-zoom="${v.id}">`;
-    if(v.type==="instagram") return `<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/${v.id}/" data-instgrm-version="14" style="background:#FFF;border:0;margin:0;width:100%;min-width:0;max-width:none;"></blockquote>`;
+    if(v.type==="instagram") return `<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/${v.id}/" data-instgrm-version="14" style="background:#FFF;border:0;margin:0;width:100%;min-width:0;max-width:none;"></blockquote>`;
     if(v.type==="youtube") return `<iframe src="https://www.youtube.com/embed/${v.id}" allowfullscreen loading="lazy" title="${v.title}"></iframe>`;
     if(v.type==="drive") return `<iframe src="https://drive.google.com/file/d/${v.id}/preview" allowfullscreen loading="lazy" title="${v.title}"></iframe>`;
     return `<video src="${v.id}" controls preload="metadata"></video>`;
