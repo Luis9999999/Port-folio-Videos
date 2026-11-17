@@ -33,12 +33,12 @@
   .btn:active{transform:scale(.97);}
   .btn.ghost{background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--text);margin-left:10px;}
 
-  /* Ao passar o mouse, o destaque laranja vai para o botão sob o cursor */
+  /* Nenhum botão fica selecionado: o laranja aparece só no botão sob o cursor (ou em foco) */
   @media(hover:hover){
-    .links:hover .btn:not(:hover):not(:focus-visible),.cta:hover .btn:not(:hover):not(:focus-visible){background:rgba(255,255,255,.04);border-color:var(--line);color:var(--text);}
     .links .btn:hover,.cta .btn:hover{background:var(--accent);border-color:var(--accent);color:#fff;}
   }
   .links .btn:focus-visible,.cta .btn:focus-visible{background:var(--accent);border-color:var(--accent);color:#fff;outline:2px solid var(--text);outline-offset:3px;}
+  .cta .btn.ghost:first-child{margin-left:0;margin-top:0;}
 
   section{padding:64px 0;}
   h2{font-size:clamp(28px,4.5vw,40px);margin:0 0 10px;letter-spacing:-.025em;line-height:1.1;}
@@ -108,7 +108,7 @@
   <span class="eyebrow">Vídeos · Fotos · Artes</span>
   <h1 id="heroName"></h1>
   <p id="heroText"></p>
-  <div class="cta"><a class="btn" href="#trabalhos">Ver trabalhos</a><a class="btn ghost" href="#contato">Falar comigo</a></div>
+  <div class="cta"><a class="btn ghost" href="#trabalhos">Ver trabalhos</a><a class="btn ghost" href="#contato">Falar comigo</a></div>
 </div></header>
 
 <section id="trabalhos" class="reveal"><div class="wrap">
@@ -187,7 +187,7 @@
   $("aboutText").innerHTML = ABOUT.text.map(p=>`<p>${p}</p>`).join("");
   $("aboutFacts").innerHTML = ABOUT.facts.map(f=>`<li><b>${f.t}</b><span>${f.d}</span></li>`).join("");
   $("links").innerHTML = CONTACTS.length
-    ? CONTACTS.map((c,i)=>`<a class="btn ${i?'ghost':''}" href="${c.url}" target="_blank" rel="noopener">${c.label}</a>`).join("")
+    ? CONTACTS.map(c=>`<a class="btn ghost" href="${c.url}" target="_blank" rel="noopener">${c.label}</a>`).join("")
     : "";
 
   function embed(v){
